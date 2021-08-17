@@ -1,0 +1,29 @@
+<h3 style="font-size: 21px; font-weight: bold"><a href="/employee" class="btn btn-secondary index_btn"><i class="fa fa-plus"></i>직원 추가</a>직원 목록</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>핸드폰</th>
+            <th>사는 곳</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.city}}</td>
+                <td>
+                    <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a href="/employee/delete/{{this._id}}" onclick="return confirm('직원정보를 삭제하시겠습니까?')"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+  
